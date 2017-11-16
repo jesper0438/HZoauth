@@ -25,3 +25,18 @@
 </div>
 </div>
 @endsection
+@push('script')
+<script>
+    const data = {
+    name: 'Test 2',
+    redirect: 'http://localhost/callback'
+};
+
+axios.post('/oauth/clients', data)
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch (response => {
+        // List errors on response...
+    });
+@endpush
